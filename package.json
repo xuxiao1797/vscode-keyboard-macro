@@ -1,0 +1,95 @@
+{
+  "name": "keyboard-macro",
+  "displayName": "keyboard-macro",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "files": [
+    "out",
+    "assets"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "macro.startRecording",
+        "title": "Start Recording Macro",
+        "icon": "assets/record_start.svg"
+      },
+      {
+        "command": "macro.stopRecording",
+        "title": "Stop Recording Macro",
+        "icon": "assets/record_pause.svg"
+      },
+      {
+        "command": "macro.playMacro",
+        "title": "Play Macro",
+        "icon": "assets/record_play.svg"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "macro.startRecording",
+          "when": "!macro.isPlaying",
+          "group": "navigation"
+        },
+        {
+          "command": "macro.stopRecording",
+          "when": "macro.isPlaying",
+          "group": "navigation"
+        },
+        {
+          "command": "macro.playMacro",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Keyboard Macro Configuration",
+      "properties": {
+        "keyboard-Macro.enablePlayMultiple": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable Play Multiple."
+        },
+        "keyboard-Macro.enableTimeOffset": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable TimeOffset."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.100.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2"
+  },
+  "publisher": "sola-xx",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xuxiao1797/vscode-keyboard-macro.git"
+  }
+}
