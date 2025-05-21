@@ -15,6 +15,7 @@ vscode keyboard-macro plugin，record keyboard actions and replay it.
 There are two buttons in editor toolbar.
 Click start record button to start, it will record all the actions after start. Click stop record button when finish typing.
 Click play button to replay the action
+![keyboard-macro](https://github.com/user-attachments/assets/0b0703d4-1555-4e01-9af7-b87929a51e90)
 
 #### Extension Settings
 
@@ -34,7 +35,7 @@ vscode keyboard-macro 插件，允许记录键盘宏然后播放.
 编辑器工具栏有两个按钮.
 点击start按钮开始记录, 点击后会记录所有键盘和鼠标在编辑器上的操作， 结束后点击stop按钮。
 点击play按钮播放记录的键盘宏
-
+![keyboard-macro](https://github.com/user-attachments/assets/0b0703d4-1555-4e01-9af7-b87929a51e90)
 #### Extension Settings
 
 插件设置:
